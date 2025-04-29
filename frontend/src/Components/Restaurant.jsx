@@ -279,74 +279,101 @@ const Restaurant = () => {
           </div>
         )}
         {isProfileVisible && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm">
-            <Card className="w-full max-w-md mx-4 bg-white rounded-2xl shadow-2xl">
-              <CardBody className="p-8">
-                <Typography
-                  variant="h4"
-                  color="blue-gray"
-                  className="mb-6 text-center"
-                >
-                  Restaurant Profile
-                </Typography>
-                <div className="space-y-4">
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Restaurant Name:</span>{" "}
-                    {restaurant.restoName}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Description:</span>{" "}
-                    {restaurant.description}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Rating:</span>{" "}
-                    {restaurant.rating}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Food Type:</span>{" "}
-                    {restaurant.foodType}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Location:</span>{" "}
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm transition-all duration-300">
+          <div className="w-full max-w-2xl mx-6 bg-white rounded-3xl shadow-2xl overflow-hidden animate-fadeIn">
+            <div className="p-8">
+              <h2 className="text-3xl font-bold text-blue-gray-800 mb-8 text-center">
+                  🍽️ Restaurant Profile
+                </h2>
+
+                {/* 5x2 Grid */}
+                <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">
+                      Restaurant Name
+                    </span>
+                    <span className="font-semibold text-gray-800">
+                      {restaurant.restoName}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Rating</span>
+                    <span className="font-semibold text-gray-800">
+                      {restaurant.rating}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Food Type</span>
+                    <span
+                      className={`font-semibold px-2 py-1 rounded w-fit ${
+                        restaurant.foodType === "VEG"
+                          ? "text-green-700 bg-green-100"
+                          : restaurant.foodType === "NON_VEG"
+                          ? "text-red-700 bg-red-100"
+                          : "text-gray-800 bg-gray-100"
+                      }`}
+                    >
+                      {restaurant.foodType}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                  <span className="text-sm text-gray-500">Description</span>
+                    <span className="font-medium text-gray-700">
+                      {restaurant.description}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Open Time</span>
+                    <span className="font-semibold text-gray-800">
+                      {restaurant.openTime}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Close Time</span>
+                    <span className="font-semibold text-gray-800">
+                      {restaurant.closeTime}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Phone No</span>
+                    <span className="font-semibold text-gray-800">
+                      {restaurant.phoneNo}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">FSSAI License</span>
+                    <span className="font-semibold text-gray-800">
+                      {restaurant.fssaiLicense}
+                    </span>
+                  </div>
+                  <div className="flex flex-col ">
+                  <span className="text-sm text-gray-500">Average Cost</span>
+                    <span className="font-semibold text-gray-800">
+                      {restaurant.averageCost}
+                    </span>
+                  </div>
+                  <div className="flex flex-col ">
+                    <span className="text-sm text-gray-500">Location</span>
                     <a
                       href={restaurant.locationLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 underline hover:text-blue-800"
+                      className="text-blue-600 hover:underline font-semibold"
                     >
-                      {restaurant.locationLink}
+                      View on map
                     </a>
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">FSSAI Licence:</span>{" "}
-                    {restaurant.fssaiLicense}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Open Time:</span>{" "}
-                    {restaurant.openTime}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Close Time:</span>{" "}
-                    {restaurant.closeTime}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Phone No:</span>{" "}
-                    {restaurant.phoneNo}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Average Cost:</span>{" "}
-                    {restaurant.averageCost}
-                  </Typography>
+                  </div>  
                 </div>
 
+                {/* Close Button */}
                 <button
                   onClick={() => setIsProfileVisible(false)}
-                  className="mt-8 w-full rounded-md bg-red-500 px-4 py-2 text-white font-semibold hover:bg-red-600"
+                  className="mt-10 w-full rounded-lg bg-gradient-to-r from-red-500 to-red-600 px-6 py-3 text-white font-bold hover:from-red-600 hover:to-red-700 transition-all duration-300"
                 >
-                  Close
+                  Close Profile
                 </button>
-              </CardBody>
-            </Card>
+              </div>
+            </div>
           </div>
         )}
       </div>

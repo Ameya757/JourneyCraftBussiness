@@ -257,58 +257,78 @@ const Guide = () => {
           </div>
         )}
         {isProfileVisible && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm">
-            <Card className="w-full max-w-md mx-4 bg-white rounded-2xl shadow-2xl">
-              <CardBody className="p-8">
-                <Typography
-                  variant="h4"
-                  color="blue-gray"
-                  className="mb-6 text-center"
-                >
-                  Guide Profile
-                </Typography>
-                <div className="space-y-4">
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Name:</span>{" "}
-                    {guide.guidename}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Experience:</span>{" "}
-                    {guide.experience} years
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Language:</span>{" "}
-                    {guide.language}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Bio:</span> {guide.bio}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Location:</span>{" "}
-                    {guide.latitude}, {guide.longitude}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">License No:</span>{" "}
-                    {guide.licenseNumber}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Phone No:</span>{" "}
-                    {guide.phoneNo}
-                  </Typography>
-                  <Typography variant="h6" className="text-gray-700">
-                    <span className="font-semibold">Available:</span>{" "}
-                    {guide.isAvailable ? "Yes" : "No"}
-                  </Typography>
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm transition-all duration-300">
+            <div className="w-full max-w-2xl mx-6 bg-white rounded-3xl shadow-2xl overflow-hidden animate-fadeIn">
+              <div className="p-8">
+                <h2 className="text-3xl font-bold text-blue-gray-800 mb-8 text-center">
+                  🧭 Guide Profile
+                </h2>
+
+                {/* 4x2 Table Grid */}
+                <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Name</span>
+                    <span className="font-semibold text-gray-800">
+                      {guide.guidename}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Experience</span>
+                    <span className="font-semibold text-gray-800">
+                      {guide.experience} years
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Language</span>
+                    <span className="font-semibold text-gray-800">
+                      {guide.language}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Phone No</span>
+                    <span className="font-semibold text-gray-800">
+                      {guide.phoneNo}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Latitude</span>
+                    <span className="font-semibold text-gray-800">
+                      {guide.latitude}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Longitude</span>
+                    <span className="font-semibold text-gray-800">
+                      {guide.longitude}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">License No</span>
+                    <span className="font-semibold text-gray-800">
+                      {guide.licenseNumber}
+                    </span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm text-gray-500">Available</span>
+                    <span
+                      className={`font-semibold ${
+                        guide.isAvailable ? "text-green-600" : "text-red-600"
+                      }`}
+                    >
+                      {guide.isAvailable ? "Yes" : "No"}
+                    </span>
+                  </div>
                 </div>
 
+                {/* Close Button */}
                 <button
                   onClick={() => setIsProfileVisible(false)}
-                  className="mt-8 w-full rounded-md bg-red-500 px-4 py-2 text-white font-semibold hover:bg-red-600"
+                  className="mt-10 w-full rounded-lg bg-gradient-to-r from-red-500 to-red-600 px-6 py-3 text-white font-bold hover:from-red-600 hover:to-red-700 transition-all duration-300"
                 >
-                  Close
+                  Close Profile
                 </button>
-              </CardBody>
-            </Card>
+              </div>
+            </div>
           </div>
         )}
       </div>
