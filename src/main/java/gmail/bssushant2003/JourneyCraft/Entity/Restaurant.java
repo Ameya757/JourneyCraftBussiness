@@ -63,4 +63,9 @@ public class Restaurant {
     public enum FoodType {
         VEG, NON_VEG , BOTH
     }
+
+    @Column(nullable = false)
+    private boolean isApproved;
+
+
 }

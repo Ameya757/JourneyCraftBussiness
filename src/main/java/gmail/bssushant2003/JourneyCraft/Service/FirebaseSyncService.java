@@ -86,6 +86,7 @@ public class FirebaseSyncService {
     public void syncStreetLocations() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("streetLocations");
         List<StreetLocations> locations = streetLocationRepository.findAll();
+        System.out.println(locations);
         ref.setValueAsync(null);
 
         for (StreetLocations s : locations) {

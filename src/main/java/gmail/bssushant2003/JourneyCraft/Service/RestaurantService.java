@@ -47,6 +47,7 @@ public class RestaurantService {
         toUpdateResto.setFssaiLicense(resto.getFssaiLicense());
         toUpdateResto.setLocationLink(resto.getLocationLink());
         toUpdateResto.setFoodType(resto.getFoodType());
+        toUpdateResto.setApproved(resto.isApproved());
 
         restaurantRepository.save(toUpdateResto);
     }

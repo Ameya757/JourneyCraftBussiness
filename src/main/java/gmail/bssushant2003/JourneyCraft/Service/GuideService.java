@@ -44,6 +44,8 @@ public class GuideService {
         toUpdateGuide.setIsAvailable(guide.getIsAvailable());
         toUpdateGuide.setLanguage(guide.getLanguage());
         toUpdateGuide.setLicenseNumber(guide.getLicenseNumber());
+        toUpdateGuide.setApproved(guide.isApproved());
+
         guideRepository.save(toUpdateGuide);
     }
 

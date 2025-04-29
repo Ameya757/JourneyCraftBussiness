@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: -40 },
   visible: {
     opacity: 1,
     y: 0,
@@ -15,6 +15,7 @@ const fadeInUp = {
     },
   },
 };
+
 
 const LandingPage = () => {
   const {role , username} = useSelector((state) => state.auth);
@@ -79,7 +80,6 @@ const LandingPage = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                variants={fadeInUp}
               >
                 <h3 className="text-2xl font-serif font-semibold text-indigo-700">
                   For {role}

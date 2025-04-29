@@ -50,4 +50,7 @@ public class Guide {
 
     @Column(length = 10)
     private String phoneNo;
+
+    @Column(nullable = false)
+    private boolean isApproved = false;
 }

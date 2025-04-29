@@ -18,7 +18,7 @@ public class OtpService {
         String otp = String.format("%06d", new Random().nextInt(999999));
         otpStore.put(email, otp);
 
-        String subject = "Thank You For Registering On JourneyCraft💕";
+        String subject = "Thank You For Registering On JourneyCraft";
         String body = "Your OTP for registration is: " + otp;
 
         emailService.sendSimpleMail(email, subject, body);

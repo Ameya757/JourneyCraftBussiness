@@ -5,7 +5,6 @@ import gmail.bssushant2003.JourneyCraft.Entity.LatLng;
 import gmail.bssushant2003.JourneyCraft.Entity.StreetLocations;
 import gmail.bssushant2003.JourneyCraft.Service.LocationExtractorService;
 import org.springframework.data.util.Pair;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
